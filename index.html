@@ -64,11 +64,14 @@
             this.tailPhase += 0.15;
             this.findFood(foods);
 
+            this.vx *= 0.96;
+            this.vy *= 0.96;
+
             if (this.targetFood) {
                 const dx = this.targetFood.x - this.x;
                 const dy = this.targetFood.y - this.y;
                 const dist = Math.sqrt(dx * dx + dy * dy);
-                if (dist < this.size * 0.6) {
+                if (dist < this.size * 1.2) {
                     this.targetFood.eaten = true;
                     this.targetFood = null;
                     return;
