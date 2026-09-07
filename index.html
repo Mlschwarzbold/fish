@@ -64,9 +64,6 @@
             this.tailPhase += 0.15;
             this.findFood(foods);
 
-            this.vx *= 0.96;
-            this.vy *= 0.96;
-
             if (this.targetFood) {
                 const dx = this.targetFood.x - this.x;
                 const dy = this.targetFood.y - this.y;
@@ -77,6 +74,8 @@
                     return;
                 }
                 const speed = 3.5;
+                this.vx *= 0.96;
+                this.vy *= 0.96;
                 this.vx += (dx / dist) * 0.15;
                 this.vy += (dy / dist) * 0.15;
             } else {
