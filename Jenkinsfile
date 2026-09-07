@@ -19,7 +19,7 @@ pipeline {
             steps {
                 script {
                     sh "docker rm -f ${CONTAINER_NAME} || true"
-                    docker.image(IMAGE_NAME).run('-d -p 8080:80 --name ${CONTAINER_NAME}')
+                    docker.image(IMAGE_NAME).run('-d -p 5100:80 --name ${CONTAINER_NAME}')
                 }
             }
         }
